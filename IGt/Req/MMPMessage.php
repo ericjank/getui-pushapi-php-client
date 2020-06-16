@@ -12,25 +12,25 @@ class MMPMessage extends PBMessage
     public function __construct($reader = null)
     {
         parent::__construct($reader);
-        $this->fields['2'] = 'Transparent';
+        $this->fields['2'] = '\\Getui\\IGt\\Req\\Transparent';
         $this->values['2'] = '';
-        $this->fields['3'] = 'PBString';
+        $this->fields['3'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['3'] = '';
-        $this->fields['4'] = 'PBInt';
+        $this->fields['4'] = '\\Getui\\Protobuf\\Type\\PBInt';
         $this->values['4'] = '';
-        $this->fields['5'] = 'PBInt';
+        $this->fields['5'] = '\\Getui\\Protobuf\\Type\\PBInt';
         $this->values['5'] = '';
-        $this->fields['6'] = 'PBInt';
+        $this->fields['6'] = '\\Getui\\Protobuf\\Type\\PBInt';
         $this->values['6'] = '';
-        $this->fields['7'] = 'PBBool';
+        $this->fields['7'] = '\\Getui\\Protobuf\\Type\\PBBool';
         $this->values['7'] = '';
         $this->values['7'] = new PBBool;
         $this->values['7']->value = true;
-        $this->fields['8'] = 'PBInt';
+        $this->fields['8'] = '\\Getui\\Protobuf\\Type\\PBInt';
         $this->values['8'] = '';
-        $this->fields['9'] = 'PBString';
+        $this->fields['9'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['9'] = '';
-        $this->fields['10'] = 'PBBool';
+        $this->fields['10'] = '\\Getui\\Protobuf\\Type\\PBBool';
         $this->values['10'] = '';
         $this->values['10'] = new PBBool;
         $this->values['10']->value = true;

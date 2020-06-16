@@ -11,9 +11,9 @@ class ReqServList extends PBMessage
     public function __construct($reader = null)
     {
         parent::__construct($reader);
-        $this->fields['1'] = 'PBString';
+        $this->fields['1'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['1'] = '';
-        $this->fields['2'] = 'PBInt';
+        $this->fields['2'] = '\\Getui\\Protobuf\\Type\\PBInt';
         $this->values['2'] = '';
     }
 

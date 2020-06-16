@@ -11,9 +11,9 @@ class StartOSBatchTask extends PBMessage
     public function __construct($reader = null)
     {
         parent::__construct($reader);
-        $this->fields['1'] = 'OSMessage';
+        $this->fields['1'] = '\\Getui\\IGt\\Req\\OSMessage';
         $this->values['1'] = '';
-        $this->fields['2'] = 'PBInt';
+        $this->fields['2'] = '\\Getui\\Protobuf\\Type\\PBInt';
         $this->values['2'] = '';
     }
 

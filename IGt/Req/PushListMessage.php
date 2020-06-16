@@ -11,11 +11,11 @@ class PushListMessage extends PBMessage
     public function __construct($reader = null)
     {
         parent::__construct($reader);
-        $this->fields['1'] = 'PBString';
+        $this->fields['1'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['1'] = '';
-        $this->fields['2'] = 'PBString';
+        $this->fields['2'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['2'] = '';
-        $this->fields['3'] = 'Target';
+        $this->fields['3'] = '\\Getui\\IGt\\Req\\Target';
         $this->values['3'] = [];
     }
 

@@ -11,21 +11,21 @@ class NotifyInfo extends PBMessage
     public function __construct($reader = null)
     {
         parent::__construct($reader);
-        $this->fields['1'] = 'PBString';
+        $this->fields['1'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['1'] = '';
-        $this->fields['2'] = 'PBString';
+        $this->fields['2'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['2'] = '';
-        $this->fields['3'] = 'PBString';
+        $this->fields['3'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['3'] = '';
-        $this->fields['4'] = 'PBString';
+        $this->fields['4'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['4'] = '';
-        $this->fields['5'] = 'PBString';
+        $this->fields['5'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['5'] = '';
-        $this->fields['6'] = 'NotifyInfo_Type';
+        $this->fields['6'] = '\\Getui\\IGt\\Req\\NotifyInfo_Type';
         $this->values['6'] = '';
         $this->values['6'] = new NotifyInfo_Type;
         $this->values['6']->value = NotifyInfo_Type::_payload;
-        $this->fields['7'] = 'PBString';
+        $this->fields['7'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['7'] = '';
     }
 

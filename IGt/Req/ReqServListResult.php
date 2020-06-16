@@ -11,11 +11,11 @@ class ReqServListResult extends PBMessage
     public function __construct($reader = null)
     {
         parent::__construct($reader);
-        $this->fields['1'] = 'PBInt';
+        $this->fields['1'] = '\\Getui\\Protobuf\\Type\\PBInt';
         $this->values['1'] = '';
-        $this->fields['2'] = 'PBString';
+        $this->fields['2'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['2'] = [];
-        $this->fields['3'] = 'PBString';
+        $this->fields['3'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['3'] = '';
     }
 

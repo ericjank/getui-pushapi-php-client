@@ -12,11 +12,11 @@ class PushMMPSingleBatchMessage extends PBMessage
     public function __construct($reader = null)
     {
         parent::__construct($reader);
-        $this->fields['1'] = 'PBString';
+        $this->fields['1'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['1'] = '';
-        $this->fields['2'] = 'PushMMPSingleMessage';
+        $this->fields['2'] = '\\Getui\\IGt\\Req\\PushMMPSingleMessage';
         $this->values['2'] = [];
-        $this->fields['3'] = 'PBBool';
+        $this->fields['3'] = '\\Getui\\Protobuf\\Type\\PBBool';
         $this->values['3'] = '';
         $this->values['3'] = new PBBool;
         $this->values['3']->value = true;

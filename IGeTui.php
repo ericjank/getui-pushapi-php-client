@@ -9,8 +9,9 @@ namespace Getui;
 use Getui\IGt\IGtMessage;
 use Getui\IGt\IGtListMessage;
 use Getui\IGt\IGtTarget;
-use Getui\IGt\Utils\GTConfig;
 use Getui\IGt\Utils\ApiUrlRespectUtils;
+use Getui\IGt\Utils\GTConfig;
+use Getui\IGt\Utils\HttpManager;
 use Getui\IGt\Utils\LangUtils;
 
 class IGeTui

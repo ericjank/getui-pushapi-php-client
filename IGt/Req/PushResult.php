@@ -11,21 +11,21 @@ class PushResult extends PBMessage
     public function __construct($reader = null)
     {
         parent::__construct($reader);
-        $this->fields['1'] = 'PushResult_EPushResult';
+        $this->fields['1'] = '\\Getui\\IGt\\Req\\PushResult_EPushResult';
         $this->values['1'] = '';
-        $this->fields['2'] = 'PBString';
+        $this->fields['2'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['2'] = '';
-        $this->fields['3'] = 'PBString';
+        $this->fields['3'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['3'] = '';
-        $this->fields['4'] = 'PBString';
+        $this->fields['4'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['4'] = '';
-        $this->fields['5'] = 'PBString';
+        $this->fields['5'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['5'] = '';
-        $this->fields['6'] = 'PBString';
+        $this->fields['6'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['6'] = '';
-        $this->fields['7'] = 'PBString';
+        $this->fields['7'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['7'] = '';
-        $this->fields['8'] = 'PBString';
+        $this->fields['8'] = '\\Getui\\Protobuf\\Type\\PBString';
         $this->values['8'] = '';
     }
 

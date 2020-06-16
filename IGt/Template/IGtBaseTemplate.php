@@ -108,62 +108,62 @@ class IGtBaseTemplate
     public function setSmsInfo($smsMessage)
     {
         if ($smsMessage == null) {
-            throw new \RuntimeException("smsInfo cannot be empty");
-        } else {
-            $smsTemplateId = $smsMessage->getSmsTemplateId();
-            $smsContent = $smsMessage->getSmsContent();
-            $offlineSendtime = $smsMessage->getOfflineSendtime();
-            $smsSendDuration = 0;
-            if ($smsTemplateId != null || !empty($smsTemplateId)) {
-                if ($offlineSendtime == null) {
-                    throw new \RuntimeException("offlineSendtime cannot be empty");
-                } else {
-                    $build = new SmsInfo;
-                    $build->set_smsChecked(false);
-                    $build->set_smsTemplateId($smsTemplateId);
-                    $build->set_offlineSendtime($offlineSendtime);
-                    if ($smsMessage->getisApplink()) {
-                        if ($smsContent['url'] != null) {
-                            throw new \RuntimeException("SmsContent cann not contains key about url");
-                        }
-                        $smsContentEntry = new SmsContentEntry;
-                        $smsContentEntry->set_key("applinkIdentification");
-                        $smsContentEntry->set_value("1");
-                        $build->set_smsContent("applinkIdentification", $smsContentEntry);
-                        $payload = $smsMessage->getPayload();
+            throw new \RuntimeException('smsInfo cannot be empty');
+        }
 
-                        if ($payload != null && !empty($payload)) {
-                            $smsContentEntry = new SmsContentEntry;
-                            $smsContentEntry->set_key("url");
-                            $smsContentEntry->set_value($smsMessage->getUrl() . "?n=" . $payload . "&p=");
-                            $build->set_smsContent("url", $smsContentEntry);
+        $smsTemplateId = $smsMessage->getSmsTemplateId();
+        $smsContent = $smsMessage->getSmsContent();
+        $offlineSendtime = $smsMessage->getOfflineSendtime();
+        $smsSendDuration = 0;
+        if ($smsTemplateId != null || !empty($smsTemplateId)) {
+            if ($offlineSendtime == null) {
+                throw new \RuntimeException('offlineSendtime cannot be empty');
+            } else {
+                $build = new SmsInfo;
+                $build->set_smsChecked(false);
+                $build->set_smsTemplateId($smsTemplateId);
+                $build->set_offlineSendtime($offlineSendtime);
+                if ($smsMessage->getisApplink()) {
+                    if ($smsContent['url'] != null) {
+                        throw new \RuntimeException('SmsContent cann not contains key about url');
+                    }
+                    $smsContentEntry = new SmsContentEntry;
+                    $smsContentEntry->set_key("applinkIdentification");
+                    $smsContentEntry->set_value("1");
+                    $build->set_smsContent("applinkIdentification", $smsContentEntry);
+                    $payload = $smsMessage->getPayload();
+
+                    if ($payload != null && !empty($payload)) {
+                        $smsContentEntry = new SmsContentEntry;
+                        $smsContentEntry->set_key("url");
+                        $smsContentEntry->set_value($smsMessage->getUrl() . "?n=" . $payload . "&p=");
+                        $build->set_smsContent("url", $smsContentEntry);
+                    } else {
+                        $smsContentEntry = new SmsContentEntry;
+                        $smsContentEntry->set_key("url");
+                        $smsContentEntry->set_value($smsMessage->getUrl() . "?p=");
+                        $build->set_smsContent("url", $smsContentEntry);
+                    }
+                }
+                if ($smsContent != null) {
+                    foreach ($smsContent as $key => $value) {
+                        if ($key == null || empty($key) || $value == null) {
+                            throw new \RuntimeException('smsContent entry cannot be null');
                         } else {
                             $smsContentEntry = new SmsContentEntry;
-                            $smsContentEntry->set_key("url");
-                            $smsContentEntry->set_value($smsMessage->getUrl() . "?p=");
-                            $build->set_smsContent("url", $smsContentEntry);
+                            $smsContentEntry->set_key($key);
+                            $smsContentEntry->set_value($value);
+                            $build->set_smsContent($key, $smsContentEntry);
                         }
                     }
-                    if ($smsContent != null) {
-                        foreach ($smsContent as $key => $value) {
-                            if ($key == null || empty($key) || $value == null) {
-                                throw new \RuntimeException("smsContent entry cannot be null");
-                            } else {
-                                $smsContentEntry = new SmsContentEntry;
-                                $smsContentEntry->set_key($key);
-                                $smsContentEntry->set_value($value);
-                                $build->set_smsContent($key, $smsContentEntry);
-                            }
-                        }
-                    }
-                    if ($smsSendDuration != null) {
-                        $build->smsSendDuration($smsSendDuration);
-                    }
-                    $this->smsInfo = $build;
                 }
-            } else {
-                throw new \RuntimeException("smsTemplateId cannot be empty");
+                if ($smsSendDuration != null) {
+                    $build->smsSendDuration($smsSendDuration);
+                }
+                $this->smsInfo = $build;
             }
+        } else {
+            throw new \RuntimeException('smsTemplateId cannot be empty');
         }
     }
 
@@ -216,7 +216,7 @@ class IGtBaseTemplate
         }
         $len = strlen($payload);
         if ($len > IGtAPNPayload::$PAYLOAD_MAX_BYTES) {
-            throw new \Exception("APN payload length overlength (" . $len . ">" . IGtAPNPayload::$PAYLOAD_MAX_BYTES . ")");
+            throw new \Exception('APN payload length overlength (' . $len . '>' . IGtAPNPayload::$PAYLOAD_MAX_BYTES . ')');
         }
         $pushInfo = $this->get_pushInfo();
         $pushInfo->set_apnJson($payload);
