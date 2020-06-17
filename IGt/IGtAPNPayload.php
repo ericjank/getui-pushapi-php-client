@@ -43,7 +43,7 @@ class IGtAPNPayload
             }
 
             if (sizeof($apsMap) == 0) {
-                throw new Exception("format error");
+                throw new \Exception("format error");
             }
             if ($this->contentAvailable > 0) {
                 $apsMap["content-available"] = $this->contentAvailable;

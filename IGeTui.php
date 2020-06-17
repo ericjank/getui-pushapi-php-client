@@ -76,7 +76,7 @@ class IGeTui
                 if ($urlList != null && count($urlList) > 0) {
                     break;
                 }
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $ex = $e;
             }
         }
@@ -102,7 +102,7 @@ class IGeTui
                         $data['authToken'] = $this->authToken;
                         $rep = HttpManager::httpPostJson($url, $data, $gzip);
                     }
-                } catch (Exception $e) {
+                } catch (\Exception $e) {
                     throw new \Exception("连接异常" . $e);
                 }
             } else if ('domain_error' == $rep['result']) {

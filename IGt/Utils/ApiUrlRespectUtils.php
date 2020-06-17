@@ -33,7 +33,7 @@ class ApiUrlRespectUtils
             $start = array_sum(explode(" ", microtime()));
             try {
                 $homepage = HttpManager::httpHead($hosts[$i]);
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 echo($e);
             }
             $ends = array_sum(explode(' ', microtime()));

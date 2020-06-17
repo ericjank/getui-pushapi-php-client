@@ -3,6 +3,7 @@
 namespace Getui\IGt\Utils;
 
 use Getui\IGt\Utils\LogUtils;
+use Getui\Exception\RequestException;
 
 class HttpManager
 {
@@ -91,7 +92,6 @@ class HttpManager
         curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)');
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1); // 302 redirect
         curl_setopt($curl, CURLOPT_MAXREDIRS, 7); //HTTp定向级别
-
         //请求失败有3次重试机会
         $result = HttpManager::exeBySetTimes(3, $curl);
 
@@ -111,7 +111,7 @@ class HttpManager
             $resp = HttpManager::httpPost($url, $data, $gzip, $action);
             $result = json_decode($resp, true);
             return $result;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             throw new RequestException($params["requestId"], "httpPost:[" . $url . "] [" . $data . " ] [ " . $result . "]:", $e);
         }
     }
